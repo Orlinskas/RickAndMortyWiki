@@ -1,5 +1,5 @@
 
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.entity;
 
 
 public class Origin {

@@ -1,15 +1,15 @@
 
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
 
-public class Location {
+public class Episode {
 
     private Integer id;
     private String name;
-    private String type;
-    private String dimension;
-    private List<String> residents = null;
+    private String airDate;
+    private String episode;
+    private List<String> characters = null;
     private String url;
     private String created;
 
@@ -17,26 +17,26 @@ public class Location {
      * No args constructor for use in serialization
      * 
      */
-    public Location() {
+    public Episode() {
     }
 
     /**
      * 
+     * @param characters
      * @param created
      * @param name
-     * @param residents
+     * @param airDate
+     * @param episode
      * @param id
-     * @param type
-     * @param dimension
      * @param url
      */
-    public Location(Integer id, String name, String type, String dimension, List<String> residents, String url, String created) {
+    public Episode(Integer id, String name, String airDate, String episode, List<String> characters, String url, String created) {
         super();
         this.id = id;
         this.name = name;
-        this.type = type;
-        this.dimension = dimension;
-        this.residents = residents;
+        this.airDate = airDate;
+        this.episode = episode;
+        this.characters = characters;
         this.url = url;
         this.created = created;
     }
@@ -57,28 +57,28 @@ public class Location {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getAirDate() {
+        return airDate;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAirDate(String airDate) {
+        this.airDate = airDate;
     }
 
-    public String getDimension() {
-        return dimension;
+    public String getEpisode() {
+        return episode;
     }
 
-    public void setDimension(String dimension) {
-        this.dimension = dimension;
+    public void setEpisode(String episode) {
+        this.episode = episode;
     }
 
-    public List<String> getResidents() {
-        return residents;
+    public List<String> getCharacters() {
+        return characters;
     }
 
-    public void setResidents(List<String> residents) {
-        this.residents = residents;
+    public void setCharacters(List<String> characters) {
+        this.characters = characters;
     }
 
     public String getUrl() {
