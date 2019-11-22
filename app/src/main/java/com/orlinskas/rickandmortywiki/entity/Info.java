@@ -1,6 +1,4 @@
-
 package com.orlinskas.rickandmortywiki.entity;
-
 
 public class Info {
     private Integer count;
@@ -8,20 +6,9 @@ public class Info {
     private String next;
     private String prev;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
     public Info() {
     }
 
-    /**
-     * 
-     * @param next
-     * @param pages
-     * @param prev
-     * @param count
-     */
     public Info(Integer count, Integer pages, String next, String prev) {
         super();
         this.count = count;

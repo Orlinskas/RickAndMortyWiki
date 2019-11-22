@@ -1,10 +1,8 @@
-
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
 
 public class Location {
-
     private Integer id;
     private String name;
     private String type;
@@ -13,23 +11,9 @@ public class Location {
     private String url;
     private String created;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
     public Location() {
     }
 
-    /**
-     * 
-     * @param created
-     * @param name
-     * @param residents
-     * @param id
-     * @param type
-     * @param dimension
-     * @param url
-     */
     public Location(Integer id, String name, String type, String dimension, List<String> residents, String url, String created) {
         super();
         this.id = id;

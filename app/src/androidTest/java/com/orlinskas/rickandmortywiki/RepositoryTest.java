@@ -13,7 +13,7 @@ public class RepositoryTest {
     public void getCharacters() {
         repository = new Repository();
         CharactersPage charactersPage = repository.getCharacters();
-        assertTrue(charactersPage.getResults().size() > 0);
+        assertTrue(charactersPage.getCharacters().size() > 0);
     }
 
     @Test

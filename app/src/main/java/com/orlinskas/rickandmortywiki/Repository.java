@@ -39,8 +39,8 @@ public class Repository {
         return charactersPage;
     }
 
-    /*public List getLocations() {
-        messagesApi.getLocations().enqueue(new Callback<List<Location>>() {
+    /*public List getEpisodes() {
+        messagesApi.getEpisodes().enqueue(new Callback<List<Location>>() {
             @Override
             public void onResponse(Call<List<Location>> call, Response<List<Location>> response) {
                 data = response.body();

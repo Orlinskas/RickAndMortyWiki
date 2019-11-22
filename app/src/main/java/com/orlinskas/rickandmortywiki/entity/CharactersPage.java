@@ -1,29 +1,18 @@
-
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
 
 public class CharactersPage {
-
     private Info info;
-    private List<Character> results = null;
+    private List<Character> characters = null;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
     public CharactersPage() {
     }
 
-    /**
-     * 
-     * @param results
-     * @param info
-     */
-    public CharactersPage(Info info, List<Character> results) {
+    public CharactersPage(Info info, List<Character> characters) {
         super();
         this.info = info;
-        this.results = results;
+        this.characters = characters;
     }
 
     public Info getInfo() {
@@ -34,12 +23,12 @@ public class CharactersPage {
         this.info = info;
     }
 
-    public List<Character> getResults() {
-        return results;
+    public List<Character> getCharacters() {
+        return characters;
     }
 
-    public void setResults(List<Character> results) {
-        this.results = results;
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
     }
 
 }

@@ -1,24 +1,12 @@
-
 package com.orlinskas.rickandmortywiki.entity;
 
-
 public class Origin {
-
     private String name;
     private String url;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
     public Origin() {
     }
 
-    /**
-     * 
-     * @param name
-     * @param url
-     */
     public Origin(String name, String url) {
         super();
         this.name = name;
@@ -40,5 +28,4 @@ public class Origin {
     public void setUrl(String url) {
         this.url = url;
     }
-
 }

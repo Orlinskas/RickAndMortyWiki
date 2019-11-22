@@ -1,10 +1,8 @@
-
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
 
 public class Character {
-
     private Integer id;
     private String name;
     private String status;
@@ -18,28 +16,9 @@ public class Character {
     private String url;
     private String created;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
     public Character() {
     }
 
-    /**
-     * 
-     * @param image
-     * @param gender
-     * @param species
-     * @param created
-     * @param origin
-     * @param name
-     * @param location
-     * @param episode
-     * @param id
-     * @param type
-     * @param url
-     * @param status
-     */
     public Character(Integer id, String name, String status, String species, String type, String gender, Origin origin, Location location, String image, List<String> episode, String url, String created) {
         super();
         this.id = id;
