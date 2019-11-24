@@ -1,4 +1,4 @@
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.ui;
 
 import android.os.Bundle;
 
@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.orlinskas.rickandmortywiki.R;
 
 public class MainActivity extends AppCompatActivity {
 

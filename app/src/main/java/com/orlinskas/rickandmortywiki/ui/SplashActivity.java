@@ -1,9 +1,11 @@
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.orlinskas.rickandmortywiki.ui.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
