@@ -1,9 +1,15 @@
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
+import java.util.Objects;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
+@Parcel(Parcel.Serialization.BEAN)
 public class Character {
     @SerializedName("id")
     @Expose
@@ -42,28 +48,7 @@ public class Character {
     @Expose
     private String created;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Character() {
-    }
-
-    /**
-     * 
-     * @param image
-     * @param gender
-     * @param species
-     * @param created
-     * @param origin
-     * @param name
-     * @param location
-     * @param episode
-     * @param id
-     * @param type
-     * @param url
-     * @param status
-     */
+    @ParcelConstructor
     public Character(Integer id, String name, String status, String species, String type, String gender, Origin origin, Location location, String image, List<String> episode, String url, String created) {
         super();
         this.id = id;
@@ -78,6 +63,36 @@ public class Character {
         this.episode = episode;
         this.url = url;
         this.created = created;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Character)) return false;
+        Character character = (Character) o;
+        return Objects.equals(getId(), character.getId()) &&
+                Objects.equals(getName(), character.getName()) &&
+                Objects.equals(getStatus(), character.getStatus()) &&
+                Objects.equals(getSpecies(), character.getSpecies()) &&
+                Objects.equals(getType(), character.getType()) &&
+                Objects.equals(getGender(), character.getGender()) &&
+                Objects.equals(getOrigin(), character.getOrigin()) &&
+                Objects.equals(getLocation(), character.getLocation()) &&
+                Objects.equals(getImage(), character.getImage()) &&
+                Objects.equals(getUrl(), character.getUrl()) &&
+                Objects.equals(getCreated(), character.getCreated());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getStatus(), getSpecies(), getType(), getGender(), getOrigin(), getLocation(), getImage(), getUrl(), getCreated());
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     public Integer getId() {

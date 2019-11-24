@@ -1,4 +1,4 @@
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.repository;
 
 public interface ApiResponsibleListener {
     void onDonePageResponse(Object data);

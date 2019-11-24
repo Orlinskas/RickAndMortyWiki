@@ -3,16 +3,34 @@ package com.orlinskas.rickandmortywiki.ui;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.orlinskas.rickandmortywiki.entity.CharactersPage;
+import com.orlinskas.rickandmortywiki.repository.ApiResponsibleListener;
 import com.orlinskas.rickandmortywiki.R;
 
-public class CharactersPageActivity extends AppCompatActivity {
+import org.parceler.Parcels;
+
+public class CharactersPageActivity extends AppCompatActivity implements ApiResponsibleListener {
+    private static final String PARCEL_CHARACTERS_PAGE = "charactersPage";
+    private int currentPage;
+    private CharactersPage charactersPage;
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_characters_page);
+        progressBar = findViewById(R.id.activity_characters_page_pb);
+
+        if (savedInstanceState != null) {
+            charactersPage = Parcels.unwrap(savedInstanceState.getParcelable(PARCEL_CHARACTERS_PAGE));
+        } else {
+            new FindDaysTask().execute();
+        }
 
     }
 
@@ -31,5 +49,26 @@ public class CharactersPageActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDonePageResponse(Object data) {
+
+    }
+
+    @Override
+    public void onDoneConcreteResponse(Object data) {
+
+    }
+
+    @Override
+    public void onFailResponse(String message) {
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(PARCEL_CHARACTERS_PAGE, Parcels.wrap(charactersPage));
     }
 }

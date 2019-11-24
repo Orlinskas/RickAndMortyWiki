@@ -2,7 +2,6 @@ package com.orlinskas.rickandmortywiki.repository;
 
 import android.util.Log;
 
-import com.orlinskas.rickandmortywiki.ApiResponsibleListener;
 import com.orlinskas.rickandmortywiki.entity.Location;
 import com.orlinskas.rickandmortywiki.entity.LocationsPage;
 

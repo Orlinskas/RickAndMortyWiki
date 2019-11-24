@@ -1,9 +1,15 @@
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
+import java.util.Objects;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+import org.parceler.ParcelConstructor;
+
+@Parcel(Parcel.Serialization.BEAN)
 public class Episode {
     @SerializedName("id")
     @Expose
@@ -19,7 +25,7 @@ public class Episode {
     private String episode;
     @SerializedName("characters")
     @Expose
-    private List<String> characters = null;
+    private List<String> characters;
     @SerializedName("url")
     @Expose
     private String url;
@@ -27,23 +33,7 @@ public class Episode {
     @Expose
     private String created;
 
-    /**
-     * No args constructor for use in serialization
-     * 
-     */
-    public Episode() {
-    }
-
-    /**
-     * 
-     * @param characters
-     * @param created
-     * @param name
-     * @param airDate
-     * @param episode
-     * @param id
-     * @param url
-     */
+    @ParcelConstructor
     public Episode(Integer id, String name, String airDate, String episode, List<String> characters, String url, String created) {
         super();
         this.id = id;
@@ -53,6 +43,24 @@ public class Episode {
         this.characters = characters;
         this.url = url;
         this.created = created;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Episode)) return false;
+        Episode episode1 = (Episode) o;
+        return Objects.equals(getId(), episode1.getId()) &&
+                Objects.equals(getName(), episode1.getName()) &&
+                Objects.equals(getAirDate(), episode1.getAirDate()) &&
+                Objects.equals(getEpisode(), episode1.getEpisode()) &&
+                Objects.equals(getUrl(), episode1.getUrl()) &&
+                Objects.equals(getCreated(), episode1.getCreated());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getAirDate(), getEpisode(), getUrl(), getCreated());
     }
 
     public Integer getId() {

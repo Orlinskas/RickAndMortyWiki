@@ -1,6 +1,5 @@
 package com.orlinskas.rickandmortywiki.repository;
 
-import com.orlinskas.rickandmortywiki.ApiResponsibleListener;
 import com.orlinskas.rickandmortywiki.RickAndMortyApi;
 import com.orlinskas.rickandmortywiki.entity.Location;
 import com.orlinskas.rickandmortywiki.entity.LocationsPage;

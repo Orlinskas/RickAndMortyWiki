@@ -12,11 +12,21 @@
         android:layout_height="82dp"
         app:srcCompat="@drawable/head_im" />
 
+    <ProgressBar
+        android:id="@+id/activity_characters_page_pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/activity_characters_page_list_view"
+        android:layout_marginTop="-5dp"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
     <ListView
         android:id="@+id/activity_characters_page_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/activity_characters_page_iv" />
+        android:layout_below="@id/activity_characters_page_iv" />
 
     <fragment
         android:id="@+id/fragment"
