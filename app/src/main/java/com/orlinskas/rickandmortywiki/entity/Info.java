@@ -1,14 +1,36 @@
 package com.orlinskas.rickandmortywiki.entity;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Info {
+    @SerializedName("count")
+    @Expose
     private Integer count;
+    @SerializedName("pages")
+    @Expose
     private Integer pages;
+    @SerializedName("next")
+    @Expose
     private String next;
+    @SerializedName("prev")
+    @Expose
     private String prev;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Info() {
     }
 
+    /**
+     * 
+     * @param next
+     * @param pages
+     * @param prev
+     * @param count
+     */
     public Info(Integer count, Integer pages, String next, String prev) {
         super();
         this.count = count;

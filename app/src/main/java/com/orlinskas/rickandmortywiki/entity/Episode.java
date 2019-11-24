@@ -1,19 +1,49 @@
 package com.orlinskas.rickandmortywiki.entity;
 
 import java.util.List;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Episode {
+    @SerializedName("id")
+    @Expose
     private Integer id;
+    @SerializedName("name")
+    @Expose
     private String name;
+    @SerializedName("air_date")
+    @Expose
     private String airDate;
+    @SerializedName("episode")
+    @Expose
     private String episode;
+    @SerializedName("characters")
+    @Expose
     private List<String> characters = null;
+    @SerializedName("url")
+    @Expose
     private String url;
+    @SerializedName("created")
+    @Expose
     private String created;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Episode() {
     }
 
+    /**
+     * 
+     * @param characters
+     * @param created
+     * @param name
+     * @param airDate
+     * @param episode
+     * @param id
+     * @param url
+     */
     public Episode(Integer id, String name, String airDate, String episode, List<String> characters, String url, String created) {
         super();
         this.id = id;
@@ -80,4 +110,5 @@ public class Episode {
     public void setCreated(String created) {
         this.created = created;
     }
+
 }

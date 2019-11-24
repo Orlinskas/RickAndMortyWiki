@@ -1,6 +1,7 @@
 package com.orlinskas.rickandmortywiki;
 
-interface ApiResponsibleListener {
-    void onDoneResponse(Object data);
+public interface ApiResponsibleListener {
+    void onDonePageResponse(Object data);
+    void onDoneConcreteResponse(Object data);
     void onFailResponse(String message);
 }

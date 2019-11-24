@@ -1,16 +1,31 @@
 package com.orlinskas.rickandmortywiki.entity;
 
+import java.util.ArrayList;
 import java.util.List;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class CharactersPage {
+    @SerializedName("info")
+    @Expose
     private Info info;
-    private List<Character> characters = null;
+    @SerializedName("results")
+    @Expose
+    private List<Character> characters = new ArrayList<Character>();
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public CharactersPage() {
     }
 
+    /**
+     * 
+     * @param characters
+     * @param info
+     */
     public CharactersPage(Info info, List<Character> characters) {
-        super();
         this.info = info;
         this.characters = characters;
     }
@@ -30,5 +45,4 @@ public class CharactersPage {
     public void setCharacters(List<Character> characters) {
         this.characters = characters;
     }
-
 }
