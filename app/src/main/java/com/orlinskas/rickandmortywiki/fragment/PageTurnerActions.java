@@ -1,6 +1,6 @@
 package com.orlinskas.rickandmortywiki.fragment;
 
-interface PageTurnerActions {
+public interface PageTurnerActions {
     void openNextPage();
     void openPrevPage();
 }

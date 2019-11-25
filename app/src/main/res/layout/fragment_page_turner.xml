@@ -4,6 +4,7 @@
     android:id="@+id/fragment_turner_fragment_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorPageTurner"
     android:orientation="vertical">
 
     <ImageView
@@ -14,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:tint="@color/colorPrimaryDark"
+        android:tint="@android:color/black"
         app:srcCompat="@android:drawable/ic_media_previous" />
 
     <ImageView
@@ -26,7 +27,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:tint="@color/colorPrimaryDark"
+        android:tint="@android:color/background_dark"
         app:srcCompat="@android:drawable/ic_media_next" />
 
     <TextView
@@ -39,6 +40,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:text="pageNumber"
+        android:textColor="@android:color/background_dark"
         android:textSize="16sp"
         android:textStyle="bold" />
 </RelativeLayout>

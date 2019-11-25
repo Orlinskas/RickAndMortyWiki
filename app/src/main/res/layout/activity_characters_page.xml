@@ -17,21 +17,29 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/activity_characters_page_list_view"
+        android:layout_below="@id/activity_characters_page_iv"
         android:layout_marginTop="-5dp"
         android:indeterminate="true"
         android:visibility="invisible" />
 
-    <ListView
-        android:id="@+id/activity_characters_page_list_view"
+    <ScrollView
+        android:id="@+id/activity_characters_page_sv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/activity_characters_page_iv" />
+        android:layout_below="@+id/activity_characters_page_pb">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.orlinskas.rickandmortywiki.fragment.PagerTurnerFragment"
+        <LinearLayout
+            android:id="@+id/activity_characters_page_ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/activity_characters_page_ll_page_turner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"></LinearLayout>
+
 </RelativeLayout>

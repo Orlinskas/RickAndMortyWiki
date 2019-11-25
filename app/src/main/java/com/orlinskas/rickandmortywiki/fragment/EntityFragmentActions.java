@@ -1,5 +1,5 @@
 package com.orlinskas.rickandmortywiki.fragment;
 
-interface EntityFragmentActions {
+public interface EntityFragmentActions {
     void openEntity(Object object);
 }

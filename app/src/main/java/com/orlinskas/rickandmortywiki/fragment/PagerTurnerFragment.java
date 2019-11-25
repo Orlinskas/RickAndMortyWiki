@@ -32,7 +32,7 @@ public class PagerTurnerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_turner_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_page_turner, container, false);
 
         if(savedInstanceState != null) {
             currentPage = savedInstanceState.getInt(PAGE,1);
@@ -64,7 +64,7 @@ public class PagerTurnerFragment extends Fragment {
             }
         });
 
-        currentPageTv.setText(currentPage);
+        currentPageTv.setText(String.valueOf(currentPage));
 
         return view;
     }
