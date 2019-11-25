@@ -22,8 +22,8 @@ import com.orlinskas.rickandmortywiki.entity.Character;
 import org.parceler.Parcels;
 
 public class CharacterFragment extends Fragment {
-    private static final String PARCEL_CHARACTER = "character";
-    public Character character;
+    public static final String PARCEL_CHARACTER = "character";
+    private Character character;
     private Context context;
     private EntityFragmentActions fragmentActions;
 
@@ -39,6 +39,15 @@ public class CharacterFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_character_minimized, container, false);
+
+        if(savedInstanceState != null) {
+            character = Parcels.unwrap(savedInstanceState.getParcelable(PARCEL_CHARACTER));
+        }
+        else {
+            if (getArguments() != null) {
+                character = Parcels.unwrap(getArguments().getParcelable(PARCEL_CHARACTER));
+            }
+        }
 
         ImageView avatar = view.findViewById(R.id.fragment_character_minimized_iv_avatar);
         ImageLoader.fetchImage(character.getImage(), avatar);
@@ -63,14 +72,12 @@ public class CharacterFragment extends Fragment {
             }
         });
 
-        if(savedInstanceState != null) {
-            character = Parcels.unwrap(savedInstanceState.getParcelable(PARCEL_CHARACTER));
-        }
-        //else {
-        //    if (getArguments() != null) {
-        //
-        //    }
-        //}
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(PARCEL_CHARACTER, Parcels.wrap(character));
     }
 }

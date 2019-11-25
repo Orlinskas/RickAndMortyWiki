@@ -29,10 +29,10 @@
         android:layout_below="@+id/activity_characters_page_pb">
 
         <LinearLayout
-            android:id="@+id/activity_characters_page_ll_container"
+            android:id="@+id/activity_characters_page_ll_characters_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical" />
     </ScrollView>
 
     <LinearLayout
@@ -40,6 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical" />
 
 </RelativeLayout>

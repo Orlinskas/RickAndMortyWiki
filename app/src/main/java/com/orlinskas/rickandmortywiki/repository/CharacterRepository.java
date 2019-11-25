@@ -4,8 +4,6 @@ import com.orlinskas.rickandmortywiki.RickAndMortyApi;
 import com.orlinskas.rickandmortywiki.entity.Character;
 import com.orlinskas.rickandmortywiki.entity.CharactersPage;
 
-import java.io.IOException;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -30,7 +28,7 @@ public class CharacterRepository implements ApiRepository {
                 try {
                     CharactersPage charactersPage = rickAndMortyApi.getCharacterPage(pageNumber).execute().body();
                     apiResponsibleListener.onDonePageResponse(charactersPage);
-                } catch (IOException e) {
+                } catch (Exception e) {
                     apiResponsibleListener.onFailResponse(e.getMessage());
                     e.printStackTrace();
                 }
@@ -46,7 +44,7 @@ public class CharacterRepository implements ApiRepository {
                 try {
                     Character character = rickAndMortyApi.getConcreteCharacter(id).execute().body();
                     apiResponsibleListener.onDoneConcreteResponse(character);
-                } catch (IOException e) {
+                } catch (Exception e) {
                     apiResponsibleListener.onFailResponse(e.getMessage());
                     e.printStackTrace();
                 }

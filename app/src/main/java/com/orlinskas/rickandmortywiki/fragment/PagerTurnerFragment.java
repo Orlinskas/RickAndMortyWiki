@@ -17,10 +17,10 @@ import androidx.fragment.app.Fragment;
 import com.orlinskas.rickandmortywiki.R;
 
 public class PagerTurnerFragment extends Fragment {
-    private static final String PAGE = "page";
+    public static final String PAGE = "page";
     private Context context;
     private PageTurnerActions pageTurnerActions;
-    public int currentPage;
+    private int currentPage;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -37,11 +37,11 @@ public class PagerTurnerFragment extends Fragment {
         if(savedInstanceState != null) {
             currentPage = savedInstanceState.getInt(PAGE,1);
         }
-        //else {
-        //    if (getArguments() != null) {
-        //
-        //    }
-        //}
+        else {
+            if (getArguments() != null) {
+                currentPage = getArguments().getInt(PAGE);
+            }
+        }
 
         final Animation clickAnimation = AnimationUtils.loadAnimation(context, R.anim.animation_button);
 
@@ -72,6 +72,6 @@ public class PagerTurnerFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(PAGE,currentPage);
+        outState.putInt(PAGE, currentPage);
     }
 }
