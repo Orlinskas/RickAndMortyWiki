@@ -1,4 +1,4 @@
-package com.orlinskas.rickandmortywiki;
+package com.orlinskas.rickandmortywiki.repository;
 
 import com.orlinskas.rickandmortywiki.entity.CharactersPage;
 import com.orlinskas.rickandmortywiki.entity.Character;
