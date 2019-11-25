@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_concrete_character_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ConcreteCharacterActivity">
+
+    <ImageView
+        android:id="@+id/activity_characters_page_iv"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        app:srcCompat="@drawable/head_im" />
+
+    <ScrollView
+        android:id="@+id/activity_concrete_character_sv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/activity_characters_page_iv">
+
+        <RelativeLayout
+            android:id="@+id/activity_concrete_character_rl_character_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

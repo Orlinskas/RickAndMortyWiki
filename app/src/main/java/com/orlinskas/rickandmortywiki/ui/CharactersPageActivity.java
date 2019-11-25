@@ -1,5 +1,6 @@
 package com.orlinskas.rickandmortywiki.ui;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -164,7 +165,13 @@ public class CharactersPageActivity extends AppCompatActivity implements ApiResp
 
     @Override
     public void openEntity(Object object) {
-
+        Character character = (Character) object;
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(ConcreteCharacterActivity.PARCEL_CHARACTER, Parcels.wrap(character));
+        Intent intent = new Intent();
+        intent.putExtras(bundle);
+        intent.setClass(this, ConcreteCharacterActivity.class);
+        startActivity(intent);
     }
 
     private void lockScreenOrientation() {
